@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1> {{ title }} </h1>
+	{% if user %}
+		<p> Welcome, {{ user }}. Enjoy {{ title }} </p>
+		</hr>
+		{% if version %}
+			<p> Version {{ version }} </p>		
+		{% else %}
+		<form name="version_num" action="/version_create" method="post">
+  		<div class="input"><span class="label">Enter a Version #</span>
+    	<input type="text" name="ff_version"/>
+  		</div>
+  		<div class="actions">
+    	<input type="submit" value="Load Version"/>
+  		</div>
+		</form>
+		{% endif %}
+		<p id="qa_label">Q.A. Sign Off
+  		<form name="qa_sign" action="/qa_signoff" method="post"> 
+    	<input type="submit" id="qa_so" value="Sign Off" disabled="disabled"/>
+  		</form>
+  		<p>Release Channels Approval</p>
+  		<button data-action="bea" disabled="disabled" class="btn">Sign Off</button>
+		</p>
+
+		{% if qa_sign %}
+		<script>
+  		var label = document.getElementById("qa_label");
+  		label.style.setProperty("text-decoration", "line-through");
+  		var sign_off = document.getElementById("qa_so");
+  		sign_off.value = "Revoke Sign Off";
+  		console.log("Is this even working?");
+		</script>
+		{% endif %}
+	{% else %}
+		<p> Please sign in to {{ title }} </p>
+	{% endif %}
+{% endblock %}
