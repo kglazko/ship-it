@@ -380,3 +380,9 @@ class ReleaseEventsAPIForm(Form):
     chunkNum = IntegerField('Chunk Number:', default=1)
     chunkTotal = IntegerField('Chunk Total:', default=1)
     group = StringField('Group:', default='other')
+
+
+'''Adding Form to This File Instead '''
+class SelectVersionCheckList(Form):
+    version = StringField('Enter a Version:', validators=[Regexp(ANY_VERSION_REGEX, message='Invalid version format.')])
+

@@ -7,6 +7,7 @@
 		{% if version %}
 			<p> Version {{ version }} </p>		
 		{% else %}
+		<!--Get rid of this form, link through future CheckList.py file -->
 		<form name="version_num" action="/version_create" method="post">
   		<div class="input"><span class="label">Enter a Version #</span>
     	<input type="text" name="ff_version"/>
@@ -17,6 +18,7 @@
 		</form>
 		{% endif %}
 		<p id="qa_label">Q.A. Sign Off
+		<!-- This form doesn't perform any data collection, do I need to add to Python file? -->
   		<form name="qa_sign" action="/qa_signoff" method="post"> 
     	<input type="submit" id="qa_so" value="Sign Off" disabled="disabled"/>
   		</form>
