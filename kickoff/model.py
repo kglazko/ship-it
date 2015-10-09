@@ -11,6 +11,12 @@ from mozilla.release.info import getReleaseName
 
 from kickoff import db
 
+class ReleaseChecklist(object):
+    '''A base class with all of the common columns for any release in the checklist.'''
+    version = db.Column(db.String(10), nullable=False)
+    qa_signoff = dv.Column(db.String(10), nullable=False)
+    # Here we will add the rest of the variables that will get set throughout the checklist
+    
 
 class Release(object):
 
