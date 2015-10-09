@@ -4,11 +4,14 @@
 	{% if user %}
 		<p> Welcome, {{ user }}. Enjoy {{ title }} </p>
 		</hr>
+		<form name = "select_version" action="/version_select" method="post">
 		<select>
 		{% for rel in releases %}
-		<option> {{ rel }} </option>
+		<option value = "{{ rel }}"> {{ rel }} </option>
 		{% endfor %}
 		</select>
+		<input type="submit" value="Select Version"/>
+		</form>
 		{% if version %}
 			<p> Version {{ version }} </p>		
 		{% else %}
