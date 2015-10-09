@@ -4,6 +4,11 @@
 	{% if user %}
 		<p> Welcome, {{ user }}. Enjoy {{ title }} </p>
 		</hr>
+		<select>
+		{% for rel in releases %}
+		<option> {{ rel }} </option>
+		{% endfor %}
+		</select>
 		{% if version %}
 			<p> Version {{ version }} </p>		
 		{% else %}
