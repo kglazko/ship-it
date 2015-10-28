@@ -16,7 +16,11 @@ class ReleaseChecklist(db.Model):
     '''A base class with all of the common columns for any release in the checklist.'''
     version = db.Column(db.String(10), nullable=False)
     qa_signoff = db.Column(db.String(10), nullable=False)
-    # Here we will add the rest of the variables that will get set throughout the checklist
+    rc_signoff = db.Column(db.String(10), nullable=False)
+    apk_dl = db.Column(db.String(10), nullable=False)
+    upload_gp = db.Column(db.String(10), nullable=False)
+    upload_yandex = db.Column(db.String(10), nullable=False)
+    rd_qi = db.Column(db.String(10), nullable=False)
     def __init__(self, version):
         self.version = version
         
@@ -43,6 +47,10 @@ class Release(object):
     enUSPlatforms = db.Column(db.String(500), default=None, nullable=True)
     comment = db.Column(db.Text, default=None, nullable=True)
     starter = db.Column(db.String(250), nullable=True)
+
+    def __init__(self, version):
+        self.version = version.strip()
+        
 
     # Dates are always returned in UTC time and ISO8601 format to make them
     # as transportable as possible.
