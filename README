@@ -1,5 +1,8 @@
                                Release Kick-off
-
+**FOR PROGRESS RELATED TO RELEASE CHECKLIST, PLEASE SEE https://github.com/yglazko/standalone **
+* Being built currently as stand-alone because it was more helpful for me to be able to test and fix errors more quickly without the bulk of Ship-It.
+* Running with a separate database from Ship-It, probably will continue to run with a separate database even post-integration
+* Integration will involve consolidating forms into Ship-It forms file and adding routes to appropriate file in Ship-It
 
 Release kick-off is a Mozilla "internal" tool used to start the release of
 Firefox Desktop, Android and Thunderbird.
