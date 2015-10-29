@@ -1,8 +1,8 @@
                                Release Kick-off
 **FOR PROGRESS RELATED TO RELEASE CHECKLIST, PLEASE SEE https://github.com/yglazko/standalone **
-* Being built currently as stand-alone because it was more helpful for me to be able to test and fix errors more quickly without the bulk of Ship-It.
+* Being developed as minimalist stand-alone which will be integrated into Ship-It because it was more helpful for me to be able to test and fix errors more quickly without the bulk of Ship-It.
 * Running with a separate database from Ship-It, probably will continue to run with a separate database even post-integration
-* Integration will involve consolidating forms into Ship-It forms file and adding routes to appropriate file in Ship-It
+* Integration will involve consolidating forms into Ship-It forms.py and adding routes to appropriate file in Ship-It. Front-end markup minimal to not interfere with base inheritance of Ship-It U.I.
 
 Release kick-off is a Mozilla "internal" tool used to start the release of
 Firefox Desktop, Android and Thunderbird.
