@@ -12,7 +12,7 @@ import os
 import hmac
 import posixpath
 from itertools import izip
-from random import SystemRandom
+import secrets
 
 # because the API of hmac changed with the introduction of the
 # new hashlib module, we have to support both.  This sets up a
@@ -32,7 +32,7 @@ except ImportError:
 SALT_CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 
-_sys_rng = SystemRandom()
+_sys_rng = secrets.SystemRandom().SystemRandom()
 _os_alt_seps = list(sep for sep in [os.path.sep, os.path.altsep]
                     if sep not in (None, '/'))
 
