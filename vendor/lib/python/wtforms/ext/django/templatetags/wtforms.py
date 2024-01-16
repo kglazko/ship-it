@@ -1,7 +1,6 @@
 """
 Template tags for easy WTForms access in Django templates.
 """
-from __future__ import unicode_literals
 
 import re
 

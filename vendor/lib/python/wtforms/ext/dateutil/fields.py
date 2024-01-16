@@ -1,7 +1,6 @@
 """
 A DateTimeField and DateField that use the `dateutil` package for parsing.
 """
-from __future__ import unicode_literals
 
 from dateutil import parser
 

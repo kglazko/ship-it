@@ -8,7 +8,6 @@
     :copyright: (c) 2012 by Armin Ronacher.
     :license: BSD, see LICENSE for more details.
 """
-from __future__ import with_statement, absolute_import
 import os
 import re
 import sys
