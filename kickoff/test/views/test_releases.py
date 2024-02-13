@@ -1,5 +1,4 @@
 import datetime
-import random
 import string
 
 import pytz
@@ -9,6 +8,7 @@ import simplejson as json
 from kickoff import app
 from kickoff.model import FennecRelease, ThunderbirdRelease
 from kickoff.test.views.base import ViewTest
+import secrets
 
 
 class TestRequestsAPI(ViewTest):
@@ -114,7 +114,7 @@ class TestReleaseAPI(ViewTest):
             self.assertEquals(got, 'omg!')
 
     def testUpdateStatusTruncate(self):
-        longStatus = ''.join(random.choice(string.letters) for i in xrange(270))
+        longStatus = ''.join(secrets.SystemRandom().choice(string.letters) for i in xrange(270))
         ret = self.post('/releases/Fennec-1-build1', data={'status': longStatus})
         self.assertEquals(ret.status_code, 200)
         with app.test_request_context():
