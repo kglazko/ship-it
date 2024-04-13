@@ -442,7 +442,7 @@ class _FixedOffset(datetime.tzinfo):
         return dt.replace(tzinfo=self)
 
 
-def FixedOffset(offset, _tzinfos = {}):
+def FixedOffset(offset, _tzinfos = None):
     """return a fixed-offset timezone based off a number of minutes.
 
         >>> one = FixedOffset(-330)
@@ -495,6 +495,7 @@ def FixedOffset(offset, _tzinfos = {}):
         >>> pickle.loads(pickle.dumps(two)) is two
         True
     """
+    _tzinfos = {} if _tzinfos is None else _tzinfos
     if offset == 0:
         return UTC
 
