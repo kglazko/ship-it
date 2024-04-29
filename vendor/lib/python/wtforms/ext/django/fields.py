@@ -1,7 +1,6 @@
 """
 Useful form fields for use with the Django ORM.
 """
-from __future__ import unicode_literals
 
 import operator
 
